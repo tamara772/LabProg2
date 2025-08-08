@@ -10,9 +10,10 @@ int i;
     for (i = 1; i <= 10; i++)
     {
     valor=valor+7;
-    printf("7x1= %d \n",valor);
+    printf("7x{i}= %d \n",valor);
    }
 
     
+
 
 }
