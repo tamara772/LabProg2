@@ -1,0 +1,63 @@
+
+//Etapa 2 e etapa 3
+
+#include <stdio.h>
+int main (void)
+{
+    //Etapa 2
+    int n1=10, n2=20;
+    float soma=0, sub=0, mult=0, div=0, resto=0;
+    soma=n1+n2;
+    sub=n2-n1;
+    div=n2/n1;
+    resto=n2-div*n1;
+    printf("Soma= %.2f\nSubtração= %.2f\nDivisão= %.2f\nResto= %.2f", soma, sub, div,resto);
+    float r=3, area=0, pi=3.14;
+    area=pi*r*r;
+    int idade=40, dias=0;
+    
+    dias=idade*365;
+    
+    printf("\n Área do círculo de raio= %.2f é igual a %.2f\n ", r,area);
+     printf(" \n %d Anos equivalem a %d dias.",  idade, dias);
+    
+    //Etapa 3
+    
+    int n3= -30;
+    if (n3==0)
+    { printf("\nO valor do número é zero");}
+    else {
+    if  (n3<0)
+    {
+          printf("\n%d é negativo", n3);
+    }
+     else {
+        printf("\n%d é positivo", n3);
+     }
+    }
+     int n4=30, n5=12;
+     if ((n4-n5)==0)
+     {
+         printf("\n%d é igual a %d", n4,n5);
+     }
+     if ((n4-n5)>0)
+     {
+         printf("\n%d é maior que %d", n4,n5);
+     }
+       if ((n4-n5)<0)
+       {printf("\n%d é menor que %d", n4,n5);
+     }
+     
+   float p1=70.0, p2=80.0, p3=50.0, 
+   float media;
+   media=(p1+p2+p3)/3;
+   printf("\nA média é %.2", media)
+   
+   
+   
+     
+     
+     
+     
+    return 0;
+}
