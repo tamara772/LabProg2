@@ -27,9 +27,9 @@
         k++;
     }
     
-    int vetor1[3]={1,2,3};
     int soma1=0;
     soma1=soma_vetor (vetor2,3);
     printf("soma %d", soma1);
     return 0;
+
 }
