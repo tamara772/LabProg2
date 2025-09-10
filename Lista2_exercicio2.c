@@ -24,6 +24,7 @@ float vetor1 [10];
     }
     float maior_valor=0;
     maior_valor=retorna_maior_valor (vetor1,10 );
-    printf("Maior valor no vetor: %f",maior_valor);
+    printf("Maior valor no vetor: %.2f",maior_valor);
     return 0;
+
 }
