@@ -27,8 +27,7 @@
 
 // A seguir tem-se um programa base para que vocês ajustem de acordo 
 // o pedido anteriormente
-//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-//rodando mas tá dando mesmo endereço para todo mundo
+
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -74,7 +73,7 @@ int main()
     printf("Média das mensalidades: %.02f", media);
      for (i=0;i<n; i++)
          {
-            printf("\n parcela %i: valor %.02f e endereço %p", i+1,mensal[i]);&mensal[i];
+            printf("\n parcela %i: valor %.02f e endereço %p", i+1,mensal[i],&mensal[i]);
          }
 
     // Libere a memória da área alocada
@@ -82,3 +81,4 @@ int main()
 
     return 0;
 }
+
