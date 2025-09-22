@@ -59,7 +59,7 @@ int main()
     for (i = 0; i < n; i++) {
         printf("Mensalidade número  %d: ", i+1);
         scanf("%f", &mensal[i]);
-        // validar a nota informada (while, do..while)
+        // validar a mmensalidade informada (while, do..while)//o que seria uma mensalidade inválida?
     }
 
     // Calcular média
@@ -81,4 +81,5 @@ int main()
 
     return 0;
 }
+
 
