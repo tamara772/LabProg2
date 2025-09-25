@@ -1,30 +1,29 @@
-
 #include <stdio.h>
 #include <stdlib.h>
-int Entrada1 ();//sai n 
-float Entrada2(int n);//sai mensalidades
-float Media (int n, float mensal);//sai media
-int Saida ( int n, float mensal, float media);//impressao
+int entrada1 ();//sai n 
+float *entrada2(int n);//sai mensalidades
+float media (int n, float *mensal);//sai media
+void saida ( int n, float *mensal, float media);//impressao
 
 
 int main() 
 {
   int n=0;
-  n=Entrada1 ();
-  float mensalidades[n]={};
-  mensalidades[n] =Entrada2(n);
+  n=entrada1 ();
+  float *mensalidades;
+  mensalidades = entrada2(n);
   float media1=0;
-  media1=Media(n,mensalidades);
-  Saida (n,mensalidades, media1);
+  media1=media(n,mensalidades);
+  saida (n,mensalidades, media1);
     // Libere a memória da área alocada
-    free(mensal2);
+    free(mensalidades);
 
     return 0;
 }
 
 //FUNÇÕES
 
-int Entrada1()
+int entrada1()
  {
  int n;
     
@@ -39,7 +38,7 @@ int Entrada1()
     return n;
  }
     
-    float Entrada2 (int n)
+    float *entrada2 (int n)
     
     {
         float *mensal;
@@ -58,26 +57,26 @@ int Entrada1()
         scanf("%f", &mensal[i]);
         // validar a mmensalidade informada (while, do..while)//o que seria uma mensalidade inválida?
     }
-    return  mensal;//O que retorna aqui?
+    return  mensal;
  }
     
-float Media (int n,float mensal) //calcular media. Quem entra?
+float media (int n, float* mensal) //calcular media. Quem entra?
 {
-     float soma=0;
-     float media=0;
+     float soma = 0;
+     float media = 0;
      for (int i=0;i<n;i++)
-            {
-           soma=soma+mensal[i];
-            }
-    media=soma/n;
+     {
+         soma = soma + mensal[i];
+     }
+    media = soma/n;
     return media;
 }
 
-int Saida (int n, float mensalidades, float media)
+void saida (int n, float *mensal, float media)
 {
     printf("Média das mensalidades: %.02f", media);
      for (int i=0;i<n; i++)
          {
-            printf("\n parcela %i: valor %.02f e endereço %p", i+1,mensalidade[i],&mensalidade[i]);
+            printf("\n parcela %i: valor %.02f e endereço %p", i+1,mensal[i],&mensal[i]);
          }
 }
