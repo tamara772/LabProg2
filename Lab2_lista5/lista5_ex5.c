@@ -1,7 +1,7 @@
-/* Lista 5 - ExercÃ­cio 5 â€“ RemoÃ§Ã£o em lista encadeada
-Com a mesma struct Node, crie uma funÃ§Ã£o:
-â— Node* removerInicio(Node* inicio) que remove o primeiro elemento da
-lista e retorna o novo inÃ­cio.
+/* Lista 5 - ExercÃ­cio 5 Remoção em lista encadeada
+Com a mesma struct Node, crie uma função:
+ Node* removerInicio(Node* inicio) que remove o primeiro elemento da
+lista e retorna o novo início.
 Teste inserindo 3 elementos, imprimindo a lista, removendo o primeiro e imprimindo
 novamente*/
 
@@ -18,7 +18,7 @@ typedef struct Lista{
 } Lista;
 
 
-// ----- INÃCIO DA ÃREA DE DECLARAÃ‡ÃƒO DAS FUNÃ‡Ã•ES ----- //
+// ----- Declaração das funções ----- //
 Lista* criarLista();
 void inserirInicio(Lista* lista, int valor);
 void inserirFim(Lista* lista, int valor);
@@ -27,13 +27,13 @@ int removerElemento(Lista* lista, int valor);
 void visualizar(Lista* lista);
 void esperarEnter() ;
 
-// ===== INÃCIO DO PROGRAMA PRINCIPAL ===== //
+// ===== Programa principal ===== //
 
 int main() {
     Lista* minhaLista = criarLista();
     int valor;
     int n=5;
-                printf("\n > Digite um valor para inserir no *inÃ­cio: ");
+                printf("\n > Digite um valor para inserir no *inicio: ");
                 scanf("%d", &valor);
                 inserirInicio(minhaLista, valor);
                 
@@ -65,13 +65,13 @@ int main() {
             
       return 0;
 }
-// ===== FIM DO PROGRAMA PRINCIPAL ===== //
+// ===== Fim do programa principal ===== //
 
 
-// ----- INÃCIO DA ÃREA DE DEFINÃ‡ÃƒO DAS FUNÃ‡Ã•ES ----- //
+// ----- Definição das funções ----- //
 /**
- * @brief: FunÃ§Ã£o para criar uma nova lista, a variÃ¡vel que gerencia a lista
- * @return Lista*: retorna um ponteiro do tipo Lista com o endereÃ§o de memÃ³ria alocado.
+ * @brief: Função  para criar uma nova lista, a variável que gerencia a lista
+ * @return Lista*: retorna um ponteiro do tipo Lista com o endereço da memória alocado.
  */
 Lista* criarLista() {
     Lista* lista = (Lista*)malloc(sizeof(Lista));
@@ -80,8 +80,8 @@ Lista* criarLista() {
 }
 
 /**
- * @brief: FunÃ§Ã£o para inserir um elemento no inÃ­cio da lista.
- * @param lista: deve conter o endereÃ§o de memÃ³ria do tipo Lista jÃ¡ alocado.
+ * @brief: Função para inserir um elemento no início da lista.
+ * @param lista: deve conter o endereço de memória do tipo Lista já alocado.
  * @param valor: deve conter um valor do tipo inteiro.
  * @return void: sem retorno
  */
@@ -93,11 +93,10 @@ void inserirInicio(Lista* lista, int valor) {
 }
 
 /**
- * @brief FunÃ§Ã£o para inserir um elemento no final da lista.
- * 
- * @param lista: deve conter o endereÃ§o de memÃ³ria do tipo Lista jÃ¡ alocado.
+ * @brief Função para inserir um elemento no final da lista.
+ * @param lista: deve conter o ondereço de memória do tipo Lista já alocado.
  * @param valor: deve conter um valor do tipo inteiro. 
- * @return void: sen retorno
+ * @return void: sem retorno
  */
 void inserirFim(Lista* lista, int valor) {
     Node* novoNo = (Node*)malloc(sizeof(Node));
@@ -119,8 +118,7 @@ Node* removerInicio(Node* inicio)
 {
     if (inicio == NULL) {
         printf("Lista vazia.\n");
-        return NULL;
-    }
+        return NULL;}
 
     Node* temp = inicio;        // guarda o primeiro nó
     inicio = inicio->proximo;   // move o início para o próximo
@@ -128,17 +126,15 @@ Node* removerInicio(Node* inicio)
     return inicio;              // retorna o novo início
 }
 
-
-
 /**
- * @brief FunÃ§Ã£o para remover um nÃ³ especÃ­fico da lista
- *  * @param lista: deve conter o endereÃ§o de memÃ³ria do tipo Lista jÃ¡ alocado.
+ * @brief Função para remover um nó específico da lista
+ * @param lista: deve conter o endereço de memória do tipo Lista já alocado.
  * @param valor: deve conter um valor do tipo inteiro. 
- * @return int: retorna o valor inteiro da informaÃ§Ã£o removida.
+ * @return int: retorna o valor inteiro da informação removida.
  */
 int removerElemento(Lista* lista, int valor) {
     if (lista->inicio == NULL) {
-        printf("\n > Lista vazia! NÃ£o Ã© possÃ­vel remover.\n");
+        printf("\n > Lista vazia! Não é possível remover.\n");
         esperarEnter();
         return -1;
     }
@@ -149,7 +145,7 @@ int removerElemento(Lista* lista, int valor) {
         atual = atual->proximo;
     }
     if (atual == NULL) {
-        printf("\n > Elemento %d nÃ£o encontrado na lista.\n", valor);
+        printf("\n > Elemento %d não encontrado na lista.\n", valor);
         esperarEnter();
         return -1;
     }
@@ -163,8 +159,7 @@ int removerElemento(Lista* lista, int valor) {
 }
 
 /**
- * @brief FunÃ§Ã£o para visualizar os elementos da lista.
- * 
+ * @brief Função para visualizar os elementos da lista.
  * @param lista: deve conter o endereÃ§o de memÃ³ria do tipo Lista jÃ¡ alocado.
  * @return void: sem retorno.
  */
@@ -186,9 +181,8 @@ void visualizar(Lista* lista)
 
 
 /**
- * @brief FunÃ§Ã£o para limpar '\n' indesejados e parar o programa atÃ© que
- * o usuÃ¡rio tecle 'enter' para continuar.
- *
+ * @brief Função para limpar '\n' indesejados e parar o programa até que
+ * o usuário tecle 'enter' para continuar.
  * return void: sem retorno.
  */
 void esperarEnter() {
@@ -196,4 +190,5 @@ void esperarEnter() {
     printf("\n\n Tecle [enter] para continuar...");
     getchar();
 }
-// ----- FIM DA ÃREA DE DEFINÃ‡ÃƒO DAS FUNÃ‡Ã•ES ----- //
+
+// ----- Fim da área de definição de funções ----- //
