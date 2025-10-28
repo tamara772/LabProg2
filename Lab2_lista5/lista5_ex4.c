@@ -19,14 +19,13 @@ typedef struct Lista{
 } Lista;
 
 
-// ----- INÍCIO DA ÁREA DE DECLARAÇÃO DAS FUNÇÕES ----- //
+// -----  DECLARAÇÃO DAS FUNÇÕES ----- //
 Lista* criarLista();
 void inserirInicio(Lista* lista, int valor);
 void inserirFim(Lista* lista, int valor);
 void visualizar(Lista* lista);
 void esperarEnter() ;
 
-// ===== INÍCIO DO PROGRAMA PRINCIPAL ===== //
 
 int main() {
     Lista* minhaLista = criarLista();
@@ -48,26 +47,21 @@ int main() {
             
       return 0;
 }
-// ===== FIM DO PROGRAMA PRINCIPAL ===== //
+//fim do programa principal
 
+// ----- DEFINÇÃO DAS FUNÇÕES ----- //
 
-// ----- INÍCIO DA ÁREA DE DEFINÇÃO DAS FUNÇÕES ----- //
-/**
- * @brief: Função para criar uma nova lista, a variável que gerencia a lista
- * @return Lista*: retorna um ponteiro do tipo Lista com o endereço de memória alocado.
- */
+//Função para criar uma nova lista, a variável que gerencia a lista,
+//retorna um ponteiro do tipo Lista com o endereço de memória alocado.
+ 
 Lista* criarLista() {
     Lista* lista = (Lista*)malloc(sizeof(Lista));
     lista->inicio = NULL;
     return lista;
 }
 
-/**
- * @brief: Função para inserir um elemento no início da lista.
- * @param lista: deve conter o endereço de memória do tipo Lista já alocado.
- * @param valor: deve conter um valor do tipo inteiro.
- * @return void: sem retorno
- */
+//Função para inserir um elemento no início da lista.
+ 
 void inserirInicio(Lista* lista, int valor) {
     Node* novoNo = (Node*)malloc(sizeof(Node));
     novoNo->valor = valor;
@@ -75,13 +69,8 @@ void inserirInicio(Lista* lista, int valor) {
     lista->inicio = novoNo;
 }
 
-/**
- * @brief Função para inserir um elemento no final da lista.
- * 
- * @param lista: deve conter o endereço de memória do tipo Lista já alocado.
- * @param valor: deve conter um valor do tipo inteiro. 
- * @return void: sen retorno
- */
+//Função para inserir um elemento no final da lista.
+ 
 void inserirFim(Lista* lista, int valor) {
     Node* novoNo = (Node*)malloc(sizeof(Node));
     novoNo->valor = valor;
@@ -97,12 +86,8 @@ void inserirFim(Lista* lista, int valor) {
     }
 }
 
-/**
- * @brief Função para visualizar os elementos da lista.
- * 
- * @param lista: deve conter o endereço de memória do tipo Lista já alocado.
- * @return void: sem retorno.
- */
+//Função para visualizar os elementos da lista.
+ 
 void visualizar(Lista* lista) 
 {
     if (lista->inicio == NULL) {
@@ -119,16 +104,12 @@ void visualizar(Lista* lista)
     esperarEnter();
 }
 
-
-/**
- * @brief Função para limpar '\n' indesejados e parar o programa até que
- * o usuário tecle 'enter' para continuar.
- *
- * return void: sem retorno.
- */
+//Função para limpar '\n' indesejados e parar o programa até tecla 'enter'.
+ 
 void esperarEnter() {
     while (getchar() != '\n'); // limpa buffer
     printf("\n\n Tecle [enter] para continuar...");
     getchar();
 }
 // ----- FIM DA ÁREA DE DEFINÇÃO DAS FUNÇÕES ----- //
+
