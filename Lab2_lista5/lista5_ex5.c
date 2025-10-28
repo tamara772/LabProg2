@@ -17,7 +17,6 @@ typedef struct Lista{
     Node* inicio;
 } Lista;
 
-
 // ----- Declaração das funções ----- //
 Lista* criarLista();
 void inserirInicio(Lista* lista, int valor);
@@ -69,17 +68,17 @@ int main() {
 
 
 // ----- Definição das funções ----- //
-/**
- * @brief: Função  para criar uma nova lista, a variável que gerencia a lista
- * @return Lista*: retorna um ponteiro do tipo Lista com o endereço da memória alocado.
- */
+
+//Função  para criar uma nova lista, a variável que gerencia a lista
+//return Lista*: retorna um ponteiro do tipo Lista com o endereço da memória alocado.
+ 
 Lista* criarLista() {
     Lista* lista = (Lista*)malloc(sizeof(Lista));
     lista->inicio = NULL;
     return lista;
 }
 
-/**
+/*
  * @brief: Função para inserir um elemento no início da lista.
  * @param lista: deve conter o endereço de memória do tipo Lista já alocado.
  * @param valor: deve conter um valor do tipo inteiro.
@@ -192,4 +191,5 @@ void esperarEnter() {
 }
 
 // ----- Fim da área de definição de funções ----- //
+
 
