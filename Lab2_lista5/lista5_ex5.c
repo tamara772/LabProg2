@@ -78,12 +78,8 @@ Lista* criarLista() {
     return lista;
 }
 
-/*
- * @brief: Função para inserir um elemento no início da lista.
- * @param lista: deve conter o endereço de memória do tipo Lista já alocado.
- * @param valor: deve conter um valor do tipo inteiro.
- * @return void: sem retorno
- */
+//Função para inserir um elemento no início da lista.
+
 void inserirInicio(Lista* lista, int valor) {
     Node* novoNo = (Node*)malloc(sizeof(Node));
     novoNo->valor = valor;
@@ -91,12 +87,8 @@ void inserirInicio(Lista* lista, int valor) {
     lista->inicio = novoNo;
 }
 
-/**
- * @brief Função para inserir um elemento no final da lista.
- * @param lista: deve conter o ondereço de memória do tipo Lista já alocado.
- * @param valor: deve conter um valor do tipo inteiro. 
- * @return void: sem retorno
- */
+//Função para inserir um elemento no final da lista.
+
 void inserirFim(Lista* lista, int valor) {
     Node* novoNo = (Node*)malloc(sizeof(Node));
     novoNo->valor = valor;
@@ -112,7 +104,7 @@ void inserirFim(Lista* lista, int valor) {
     }
 }
 
-/*Remove o primeiro elemento da lista e retorna o próximo*/
+//Remove o primeiro elemento da lista e retorna o próximo.
 Node* removerInicio(Node* inicio) 
 {
     if (inicio == NULL) {
@@ -125,12 +117,10 @@ Node* removerInicio(Node* inicio)
     return inicio;              // retorna o novo início
 }
 
-/**
- * @brief Função para remover um nó específico da lista
- * @param lista: deve conter o endereço de memória do tipo Lista já alocado.
- * @param valor: deve conter um valor do tipo inteiro. 
- * @return int: retorna o valor inteiro da informação removida.
- */
+
+ // Função para remover um nó específico da lista,
+ //deve conter o endereço de memória do tipo Lista já alocado e um valor inteiro.
+
 int removerElemento(Lista* lista, int valor) {
     if (lista->inicio == NULL) {
         printf("\n > Lista vazia! Não é possível remover.\n");
@@ -157,12 +147,8 @@ int removerElemento(Lista* lista, int valor) {
     return valor;
 }
 
-/**
- * @brief Função para visualizar os elementos da lista.
- * @param lista: deve conter o endereÃ§o de memÃ³ria do tipo Lista jÃ¡ alocado.
- * @return void: sem retorno.
- */
-void visualizar(Lista* lista) 
+//Função para visualizar os elementos da lista.
+ void visualizar(Lista* lista) 
 {
     if (lista->inicio == NULL) {
         printf("\n > Lista vazia!\n");
@@ -179,11 +165,8 @@ void visualizar(Lista* lista)
 }
 
 
-/**
- * @brief Função para limpar '\n' indesejados e parar o programa até que
- * o usuário tecle 'enter' para continuar.
- * return void: sem retorno.
- */
+//Função para limpar '\n' indesejados e parar o programa até tecla 'enter'.
+ 
 void esperarEnter() {
     while (getchar() != '\n'); // limpa buffer
     printf("\n\n Tecle [enter] para continuar...");
@@ -191,5 +174,6 @@ void esperarEnter() {
 }
 
 // ----- Fim da área de definição de funções ----- //
+
 
 
