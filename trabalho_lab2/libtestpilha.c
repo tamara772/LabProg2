@@ -7,14 +7,16 @@
 
 int executarTeste(Teste* t, Pilha* pilha) {
     int sucesso = 0;
-    int resultado;
+    char* resultado[];
+    int i;
 
     if (strcmp(t->operacao, "PUSH") == 0) {
         push(pilha, t->valor1);
         sucesso = 1;}// sempre ok se não deu erro
 
-    else if (strcmp(t->operacao, "POP") == 0) {
-        resultado = pop(pilha);
+    else if (strcmp(t->operacao, "POP") == 0) {      ver aqui
+         pop(pilha);
+          while (top(pilha) !NULL
         sucesso = (resultado == t->esperado);}
 
     else if (strcmp(t->operacao, "TOP") == 0) {
@@ -69,3 +71,4 @@ void rodarTestes(const char* nomeArquivoEntrada, const char* nomeArquivoSaida) {
     fclose(in);
     fclose(out);
 }
+
