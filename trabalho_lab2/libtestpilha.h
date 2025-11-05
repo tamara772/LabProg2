@@ -9,7 +9,7 @@
 typedef struct {
     char operacao[20]; //  "PUSH", "POP", "TOP"
     int valor1;        // valor usado na operação
-    int esperado;      //valor esperado da operação
+    char vetor[];      //vetor esperado após operação (string)
 } Teste;
 
 // Executa teste individual. Retorna 1 se passou, 0 se falhou
@@ -22,3 +22,4 @@ void registrarResultado(FILE* out, Teste* t, int sucesso);
 void rodarTestes(const char* nomeArquivoEntrada, const char* nomeArquivoSaida);
 
 #endif
+
