@@ -1,0 +1,5 @@
+PUSH 10 (esperado=10, obtido=10) -> SUCESSO
+PUSH 20 (esperado=20,10, obtido=20,10) -> SUCESSO
+TOP _ (esperado=20, obtido=20) -> SUCESSO
+POP (esperado=10, obtido=10) -> SUCESSO
+POP (esperado=null, obtido=null) -> SUCESSO

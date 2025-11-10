@@ -1,0 +1,5 @@
+PUSH 10  10
+PUSH 20  20,10
+TOP _    20
+POP _   10
+POP _   null
