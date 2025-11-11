@@ -1,0 +1,4 @@
+INSERIR (esperado=5, obtido=5) -> SUCESSO
+INSERIR (esperado=5,8, obtido=5,8) -> SUCESSO
+REMOVER (esperado=8, obtido=8) -> SUCESSO
+REMOVER (esperado=null, obtido=null) -> SUCESSO

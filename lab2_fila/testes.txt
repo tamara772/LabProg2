@@ -1,0 +1,4 @@
+INSERIR 5    5
+INSERIR 8    5,8
+REMOVER _    8
+REMOVER _   null
