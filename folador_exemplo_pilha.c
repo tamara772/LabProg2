@@ -15,7 +15,7 @@ Pilha* criarPilha();
 void empilhar(Pilha* pilha, int valor);
 int desempilhar(Pilha* pilha);
 void visualizar(Pilha* pilha);
-// void liberarPilha(Pilha* pilha);
+void liberarPilha(Pilha* pilha);
 int mostrarMenu();
 void esperarEnter();
 // ----- FIM DA ÁREA DE DECLARAÇÃO DAS FUNÇÕES ----- //
@@ -45,8 +45,9 @@ int main() {
                 visualizar(minhaPilha);
                 break;
             case 4:
-                printf("\nNÃO IMPLEMENTADO...");
-                //liberarPilha(minhaPilha);
+                liberarPilha(minhaPilha);
+                break;
+            case 5:
                 printf("\n > Saindo...\n\n");
                 break;
             default:
@@ -54,7 +55,7 @@ int main() {
                 esperarEnter();
                 break;
         }
-    } while (escolha != 4);
+    } while (escolha != 5);
 
     return 0;
 }
@@ -130,8 +131,19 @@ void visualizar(Pilha* pilha) {
  * @param pilha: deve conter o endereço de memória do tipo Pilha já alocado.
  * @return void: sem retorno.
  */
-void liberarPilha(Pilha* pilha) {
-    // codificar 
+void liberarPilha(Pilha* pilha) 
+{
+  No* atual = pilha->topo;
+  No* proximo;
+  while (atual != NULL) 
+  {
+    proximo = atual->prox;
+    free(atual); // Libera o nó atual
+    atual = proximo;
+  }
+  pilha->topo = NULL;
+  printf("\n Pilha liberada \n");
+  esperarEnter();
 }
 
 /**
@@ -147,7 +159,8 @@ int mostrarMenu() {
     printf("\t1. Empilhar\n");
     printf("\t2. Desempilhar\n");
     printf("\t3. Visualizar a pilha\n");
-    printf("\t4. Sair\n\n");
+    printf("\t4. Liberar a pilha\n");
+    printf("\t5. Sair\n\n");
     printf("\t# Escolha uma opção: ");
     scanf("%d", &escolha);
     return escolha;
