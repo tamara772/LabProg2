@@ -23,7 +23,7 @@ Fila* criarFila();
 void inserir(Fila* fila, char nome [50], int idade);
 int remover(Fila* fila);
 void visualizar(Fila* fila);
-//void liberarFila(Fila* fila);
+void liberarFila(Fila* fila);
 int mostrarMenu();
 void esperarEnter();
 // ----- FIM DA ÁREA DE DECLARAÇÃO DAS FUNÇÕES ----- //
@@ -59,15 +59,18 @@ int main() {
                 break;
             case 4:
                 
-                // liberarFila(minhaFila);
+                liberarFila(minhaFila);
                 
+                break;
+            case 5:                                           
                 printf("\n > Saindo...\n\n");
                 break;
+            
             default:
                 printf("\n > Opção inválida! Tente novamente.\n");
                 break;
         }
-    } while (escolha != 4);
+    } while (escolha != 5);
 
     return 0;
 }
@@ -191,4 +194,17 @@ void esperarEnter() {
     printf("\n\n Tecle [enter] para continuar...");
     getchar();
 }
+
+void liberar_fila(Fila* fila) {
+  No* atual = fila->inicio;
+  No* proximo;
+  while (atual != NULL) {
+      proximo = atual->proximo;
+      free(atual); // Libera o nó atual
+      atual = proximo;
+  }
+  fila->inicio = NULL;
+  fila->fim = NULL;
+}
+
 // ----- FIM DA ÁREA DE DEFINÇÃO DAS FUNÇÕES ----- //
