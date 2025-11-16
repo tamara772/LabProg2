@@ -9,7 +9,7 @@
 #include <string.h>
 
 
-//Estrutura do nó
+//Estrutura do nó (nó universal/todo o código)
 typedef struct Node {
   int valor;
   struct Node* proximo;
@@ -33,16 +33,16 @@ typedef struct {
 } Pilha;
 
 //Funções PILHA
-//Função criar a pilha
+//Criar a pilha
 Pilha* criarPilha();
 
-//Função inserir valor int na Pilha
+//Inserir valor int na Pilha
 void push(Pilha* pilha, int valor);
 
-//Função remover o topo da pilha
+//Remover o topo da pilha
 int pop(Pilha* pilha);
 
-//Função verificar o topo da pilha
+//Verificar o topo da pilha
 int top(Pilha* pilha);
 
 //Função que transforma a pilha em string
