@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include "libestruturas.h"
 
-//Funções Fila
+//Funções para a estrutura Fila
 Fila* criarFila() {
     Fila* fila = (Fila*)malloc(sizeof(Fila));
     fila->inicio = NULL;
@@ -72,7 +72,7 @@ int remover(Fila* fila) {
     }
 }
 
-//Funções Pilha
+//Funções da Estrutura Pilha
 
 //criar pilha
 Pilha* criarPilha() {
@@ -141,4 +141,5 @@ void visualizarPilha(Pilha* pilha) {
         atual = atual->proximo;
     }
 }
+
 
